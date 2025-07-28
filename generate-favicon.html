@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Generator</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        canvas {
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            margin: 1rem;
+        }
+        button {
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Favicon Generator</h1>
+        <p>Generate custom favicon for Amos Oluoch Portfolio</p>
+        
+        <canvas id="favicon16" width="16" height="16"></canvas>
+        <canvas id="favicon32" width="32" height="32"></canvas>
+        <canvas id="favicon64" width="64" height="64"></canvas>
+        
+        <br>
+        <button onclick="generateFavicons()">Generate Favicons</button>
+        <button onclick="downloadFavicon(16)">Download 16x16</button>
+        <button onclick="downloadFavicon(32)">Download 32x32</button>
+        <button onclick="downloadFavicon(64)">Download 64x64</button>
+    </div>
+
+    <script>
+        function generateFavicons() {
+            [16, 32, 64].forEach(size => {
+                const canvas = document.getElementById(`favicon${size}`);
+                const ctx = canvas.getContext('2d');
+                
+                // Clear canvas
+                ctx.clearRect(0, 0, size, size);
+                
+                // Create gradient background
+                const gradient = ctx.createLinearGradient(0, 0, size, size);
+                gradient.addColorStop(0, '#2563eb');
+                gradient.addColorStop(1, '#10b981');
+                
+                // Draw background circle
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(size/2, size/2, size/2, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                // Set text properties
+                ctx.fillStyle = 'white';
+                ctx.font = `bold ${size * 0.4}px Poppins, sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                
+                // Draw "AO" text
+                ctx.fillText('AO', size/2, size/2);
+                
+                // Add subtle shadow/depth
+                ctx.shadowColor = 'rgba(0,0,0,0.3)';
+                ctx.shadowBlur = size * 0.05;
+                ctx.shadowOffsetX = size * 0.02;
+                ctx.shadowOffsetY = size * 0.02;
+            });
+        }
+        
+        function downloadFavicon(size) {
+            const canvas = document.getElementById(`favicon${size}`);
+            const link = document.createElement('a');
+            link.download = `favicon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate favicons on page load
+        window.onload = function() {
+            generateFavicons();
+        };
+    </script>
+</body>
+</html>
