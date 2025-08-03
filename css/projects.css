@@ -22,12 +22,16 @@
   margin-right: auto;
 }
 
-/* Project Filters */
+/* Project Filters - CSS Only */
 .project-filters {
   display: flex;
   justify-content: center;
   gap: var(--spacing-md);
   flex-wrap: wrap;
+}
+
+.project-filter {
+  display: none;
 }
 
 .filter-btn {
@@ -41,12 +45,59 @@
   font-weight: 500;
 }
 
-.filter-btn:hover,
-.filter-btn.active {
+.filter-btn:hover {
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
   transform: translateY(-2px);
+}
+
+/* CSS-only filtering logic */
+#filter-all:checked ~ .project-filters label[for="filter-all"] {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+#filter-fullstack:checked ~ .project-filters label[for="filter-fullstack"] {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+#filter-backend:checked ~ .project-filters label[for="filter-backend"] {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+#filter-frontend:checked ~ .project-filters label[for="filter-frontend"] {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Show/hide projects based on filter selection */
+#filter-all:checked ~ .projects-grid .project-card {
+  display: block !important;
+  opacity: 1 !important;
+  transform: scale(1) translateY(0) !important;
+}
+
+#filter-fullstack:checked ~ .projects-grid .project-card:not([data-category="fullstack"]) {
+  display: none !important;
+}
+
+#filter-backend:checked ~ .projects-grid .project-card:not([data-category="backend"]) {
+  display: none !important;
+}
+
+#filter-frontend:checked ~ .projects-grid .project-card:not([data-category="frontend"]) {
+  display: none !important;
 }
 
 /* Projects Grid */
@@ -62,15 +113,42 @@
   overflow: hidden;
   transition: all var(--transition-normal);
   position: relative;
+  background: linear-gradient(135deg, var(--background-primary), var(--background-secondary));
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-light);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transform: scaleX(0);
+  transition: transform var(--transition-normal);
+  z-index: 1;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-large);
+  border-color: var(--primary-light);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
 }
 
 .project-card.featured {
   border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-medium);
+}
+
+.project-card.featured::before {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
 /* Project Image */
@@ -88,11 +166,27 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  position: relative;
+  overflow: hidden;
+}
+
+.project-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
 }
 
 .project-icon {
   font-size: 3rem;
   color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .project-overlay {
@@ -171,20 +265,22 @@
 }
 
 .tech-tag {
+  display: inline-block;
   padding: var(--spacing-xs) var(--spacing-sm);
-  background-color: var(--background-secondary);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  color: white;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 500;
-  border: 1px solid var(--border-color);
-  transition: all var(--transition-fast);
+  margin: var(--spacing-xs);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--primary-dark);
 }
 
 .tech-tag:hover {
-  background-color: var(--primary-color);
-  color: white;
-  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
 }
 
 /* Project Stats */

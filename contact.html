@@ -31,11 +31,12 @@
                     <a href="contact.html" class="nav-link active">Contact</a>
                 </li>
             </ul>
-            <button class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </label>
         </div>
     </nav>
 
@@ -165,51 +166,56 @@
             <h2 class="text-center mb-xl">Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <input type="checkbox" id="faq1" class="faq-toggle">
+                    <label for="faq1" class="faq-question">
                         <span>What services do you offer?</span>
                         <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
+                    </label>
+                    <div class="faq-content">
                         <p>I offer full-stack web development services including backend API development with Python (FastAPI/Flask), frontend development with TypeScript/JavaScript, database design and optimization with PostgreSQL, and deployment with Docker.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <input type="checkbox" id="faq2" class="faq-toggle">
+                    <label for="faq2" class="faq-question">
                         <span>What is your typical project timeline?</span>
                         <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
+                    </label>
+                    <div class="faq-content">
                         <p>Project timelines vary depending on complexity and scope. A simple website might take 2-4 weeks, while a complex web application could take 2-6 months. I provide detailed timelines during the project planning phase.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <input type="checkbox" id="faq3" class="faq-toggle">
+                    <label for="faq3" class="faq-question">
                         <span>Do you work with international clients?</span>
                         <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
+                    </label>
+                    <div class="faq-content">
                         <p>Yes, I work with clients worldwide. I'm experienced in remote collaboration and can adapt to different time zones for meetings and communication.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <input type="checkbox" id="faq4" class="faq-toggle">
+                    <label for="faq4" class="faq-question">
                         <span>What is your development process?</span>
                         <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
+                    </label>
+                    <div class="faq-content">
                         <p>My process includes: 1) Requirements gathering and planning, 2) Design and architecture, 3) Development with regular updates, 4) Testing and quality assurance, 5) Deployment and launch, 6) Post-launch support and maintenance.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <input type="checkbox" id="faq5" class="faq-toggle">
+                    <label for="faq5" class="faq-question">
                         <span>Do you provide ongoing support?</span>
                         <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
+                    </label>
+                    <div class="faq-content">
                         <p>Yes, I offer ongoing support and maintenance packages. This includes bug fixes, security updates, performance optimization, and feature enhancements as needed.</p>
                     </div>
                 </div>
@@ -248,7 +254,5 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/contact.js"></script>
 </body>
 </html>

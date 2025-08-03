@@ -207,7 +207,7 @@
   font-weight: 600;
 }
 
-/* FAQ Section */
+/* FAQ Section - CSS Only */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -219,6 +219,10 @@
   margin-bottom: var(--spacing-md);
   overflow: hidden;
   background-color: var(--background-primary);
+}
+
+.faq-toggle {
+  display: none;
 }
 
 .faq-question {
@@ -247,25 +251,26 @@
   transition: transform var(--transition-normal);
 }
 
-.faq-item.active .faq-icon {
-  transform: rotate(45deg);
-}
-
-.faq-answer {
+.faq-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-normal);
 }
 
-.faq-item.active .faq-answer {
-  max-height: 200px;
-}
-
-.faq-answer p {
+.faq-content p {
   padding: 0 var(--spacing-lg) var(--spacing-lg);
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+}
+
+/* CSS-only accordion functionality */
+.faq-toggle:checked ~ .faq-content {
+  max-height: 200px;
+}
+
+.faq-toggle:checked ~ .faq-question .faq-icon {
+  transform: rotate(45deg);
 }
 
 /* Call to Action */

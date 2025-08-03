@@ -1,15 +1,15 @@
 # 🚀 Amos Oluoch - Portfolio Website
 
-A modern, responsive portfolio website built with pure HTML, CSS, and JavaScript. This portfolio showcases the work and skills of Amos Oluoch, a Full Stack Developer specializing in Python, TypeScript, JavaScript, PostgreSQL, and Docker.
+A modern, responsive portfolio website built with **pure HTML and CSS only**. This portfolio showcases the work and skills of Amos Oluoch, a Full Stack Developer specializing in Python, TypeScript, JavaScript, PostgreSQL, and Docker.
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![Responsive](https://img.shields.io/badge/Responsive-Yes-blue) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![Responsive](https://img.shields.io/badge/Responsive-Yes-blue) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) ![No JavaScript](https://img.shields.io/badge/JavaScript-Free-red)
 
 ## ✨ Features
 
 ### 🎨 **Design & User Experience**
 - **Modern Design**: Clean, professional layout with appealing color scheme
 - **Responsive Design**: Optimized for all devices (mobile, tablet, desktop, ultra-wide)
-- **Smooth Animations**: CSS animations and JavaScript interactions
+- **CSS-Only Animations**: Smooth animations and transitions using pure CSS
 - **Custom Favicon**: Personalized SVG favicon with "AO" initials
 - **Typography**: Google Fonts (Poppins) for modern, readable text
 
@@ -22,9 +22,9 @@ A modern, responsive portfolio website built with pure HTML, CSS, and JavaScript
 
 ### 🧭 **Navigation**
 - **Fixed Navigation Bar**: Stays visible while scrolling
-- **Mobile Menu**: Hamburger menu with smooth animations
+- **CSS-Only Mobile Menu**: Hamburger menu using checkbox hack
 - **Active Page Highlighting**: Shows current page in navigation
-- **Smooth Scrolling**: Animated scrolling to page sections
+- **Smooth Scrolling**: CSS-based smooth scrolling to page sections
 - **Keyboard Navigation**: Full accessibility support
 
 ### 🏠 **Home Page**
@@ -35,37 +35,37 @@ A modern, responsive portfolio website built with pure HTML, CSS, and JavaScript
 
 ### 👨‍💻 **About Page**
 - **Personal Story**: Detailed background and journey
-- **Skills Visualization**: Animated progress bars for technical skills
+- **Skills Visualization**: CSS-animated progress bars for technical skills
 - **Experience Timeline**: Interactive career progression
 - **Highlights Section**: Key strengths and values
 
 ### 💼 **Projects Page**
-- **Project Filtering**: Filter by category (All, Full Stack, Backend, Frontend)
+- **CSS-Only Project Filtering**: Filter by category using radio buttons
 - **Interactive Cards**: Hover effects and project details
 - **Live Demo Links**: Direct access to project demos and code
 - **Technology Tags**: Visual representation of tech stack used
 
 ### 📞 **Contact Page**
-- **Contact Form**: Functional form with validation
+- **Contact Form**: Functional form with CSS validation styles
 - **Contact Information**: Multiple ways to get in touch
 - **Social Media Links**: Professional networking profiles
-- **FAQ Section**: Common questions with expandable answers
+- **CSS-Only FAQ Section**: Expandable questions using checkbox hack
 
 ## 🛠️ **Technical Stack**
 
 ### **Frontend**
 - **HTML5**: Semantic markup with accessibility features
 - **CSS3**: Modern styling with CSS Grid, Flexbox, and animations
-- **JavaScript (ES6+)**: Interactive functionality and form handling
 - **Google Fonts**: Poppins font family for typography
 
-### **Features & Functionality**
+### **CSS-Only Features & Functionality**
 - **CSS Variables**: Consistent theming and easy customization
 - **CSS Grid & Flexbox**: Modern layout techniques
-- **Intersection Observer API**: Scroll-based animations
-- **Form Validation**: Client-side form validation with feedback
+- **CSS Animations**: Keyframe animations and transitions
+- **Checkbox Hack**: Mobile menu and FAQ accordion without JavaScript
+- **Radio Button Filtering**: Project filtering using CSS selectors
 - **Touch Gestures**: Mobile-specific interactions
-- **Lazy Loading**: Performance optimization for images
+- **Progressive Enhancement**: Works without any JavaScript
 
 ## 📁 **Project Structure**
 
@@ -84,11 +84,6 @@ portfolio/
 │   ├── about.css           # About page specific styles
 │   ├── projects.css        # Projects page specific styles
 │   └── contact.css         # Contact page specific styles
-├── js/
-│   ├── main.js             # Core functionality and navigation
-│   ├── about.js            # About page interactions
-│   ├── projects.js         # Project filtering and animations
-│   └── contact.js          # Contact form handling and FAQ
 └── README.md               # Project documentation
 ```
 
@@ -97,6 +92,7 @@ portfolio/
 ### **Prerequisites**
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - No server setup required - runs on static files
+- No JavaScript dependencies
 
 ### **Installation**
 1. **Clone the repository**
@@ -146,20 +142,20 @@ The website uses CSS variables for easy customization. Edit `css/main.css`:
 ### **Adding New Sections**
 1. Create HTML structure following existing patterns
 2. Add corresponding CSS in appropriate stylesheet
-3. Include JavaScript functionality if needed
+3. Use CSS-only interactions (checkbox hack, radio buttons)
 4. Update navigation links
 
 ## 📱 **Mobile Optimization**
 
 ### **Touch-Friendly Features**
 - **Minimum 44px touch targets** for all interactive elements
-- **Swipe gestures** for mobile navigation
+- **CSS-only mobile menu** using checkbox hack
 - **Optimized form inputs** to prevent zoom on iOS
 - **Touch feedback** with scale animations
 
 ### **Performance Optimizations**
-- **Throttled scroll events** for smooth performance
-- **Lazy loading** support for images
+- **No JavaScript overhead** - faster loading
+- **CSS-only animations** for smooth performance
 - **Hardware acceleration** for animations
 - **Optimized CSS** with efficient selectors
 
@@ -207,8 +203,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Google Fonts** for the Poppins font family
 - **CSS Grid** and **Flexbox** for modern layout capabilities
-- **Intersection Observer API** for scroll animations
+- **CSS Animations** for smooth interactions
 - **Modern CSS** features for responsive design
+- **Checkbox Hack** technique for JavaScript-free interactions
 
 ---
 
