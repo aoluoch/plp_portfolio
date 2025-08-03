@@ -194,10 +194,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Amos Oluoch** - Full Stack Developer
 
-- **Email**: amos@example.com
+- **Email**: aoluoch271@gmail.com
 - **LinkedIn**: [linkedin.com/in/amosoluoch](https://linkedin.com/in/amosoluoch)
 - **GitHub**: [github.com/aoluoch](https://github.com/aoluoch)
-- **Portfolio**: [Live Demo](https://aoluoch.github.io/portfolio)
+- **Portfolio**: [Live Demo](https://amosplp.netlify.app/)
 
 ## 🙏 **Acknowledgments**
 
